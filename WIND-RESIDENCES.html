@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="icon" href="images/logbg.png"> 
+	
+	<title> Ergon Design + Build </title>
+	
+	<!-- font awesome cdn link -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+	
+	 <!-- magnific-popup css cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+	
+	<!-- font awesome cdn link -->
+    <link rel="stylesheet" href="css/gallary.css">
+	 
+	
+</head>
+<body>
+
+<!-- Header section starts -->
+<header>
+
+<input type="checkbox" name="" id="toggler">
+<label for="toggler" class="fas fa-bars"></label>
+
+<nav class="navbar">
+
+  <ul>
+  <li ><a href="index.html"> Home </a></li>
+  <li ><a href="About.html"> About </a></li>
+  <li class="active"><a href="projects.html"> Projects </a></li>
+  <li ><a href="Contact.html">Contact Us </a></li>
+  </ul >
+ </nav>
+
+ <a href="index.html" class="logo"><img src="images/log2.png" alt="ergon" style="width:300px;height:80px;"></a>
+
+</header> 
+<!-- Header section ends -->
+
+
+<div class="gallery">
+
+    <div class="image-container">
+
+        <!-- all images  -->
+        <a href="WIND-RESIDENCES/img1.jpg" class="image ice-cream">
+            <img src="WIND-RESIDENCES/img1.jpg" alt="">
+        </a>
+        <a href="WIND-RESIDENCES/img2.jpg" class="image ice-cream">
+            <img src="WIND-RESIDENCES/img2.jpg" alt="">
+        </a>
+        <a href="WIND-RESIDENCES/img3.jpg" class="image ice-cream">
+            <img src="WIND-RESIDENCES/img3.jpg" alt="">
+        </a>
+		<a href="WIND-RESIDENCES/img4.jpg" class="image ice-cream">
+            <img src="WIND-RESIDENCES/img4.jpg" alt="">
+        </a>
+        <a href="WIND-RESIDENCES/img5.jpg" class="image chocolate">
+            <img src="WIND-RESIDENCES/img5.jpg" alt="">
+        </a>
+        <a href="WIND-RESIDENCES/img6.jpg" class="image chocolate">
+            <img src="WIND-RESIDENCES/img6.jpg" alt="">
+        </a>
+		<a href="WIND-RESIDENCES/img7.jpg" class="image chocolate">
+            <img src="WIND-RESIDENCES/img7.jpg" alt="">
+        </a>
+        <a href="WIND-RESIDENCES/img8.jpg" class="image cake">
+            <img src="WIND-RESIDENCES/img8.jpg" alt="">
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- jquery cdn link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- magnific popup js cdn link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+<script>
+
+$(document).ready(function(){
+
+    $('.buttons').click(function(){
+
+        $(this).addClass('active').siblings().removeClass('active');
+
+        var filter = $(this).attr('data-filter')
+
+        if(filter == 'all'){
+            $('.image').show(400);
+        }else{
+            $('.image').not('.'+filter).hide(200);
+            $('.image').filter('.'+filter).show(400);
+        }
+
+    });
+
+    $('.gallery').magnificPopup({
+
+        delegate:'a',
+        type:'image',
+        gallery:{
+            enabled:true
+        }
+
+    });
+
+});
+
+</script>
+    
+</body>
+</html>
