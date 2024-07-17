@@ -151,16 +151,18 @@ ul li.active a{
 display: flex;
 align-items: center;
 min-height: 100vh;
-background: linear-gradient(transparent,rgb(211,211,211)), url(../ergon-wallpaper.jpg) no-repeat;
+background: linear-gradient(transparent,#f2f3f4), url(../ergon-wallpaper.jpg) no-repeat;
 background-size: cover;
 background-position: center;
 }
 
 .home .content{
+	
 	max-width: 50rem;
 }
 
 .home .content h3{
+	position: relative;
 	font-size: 6rem;
 	color: #000;
 }
@@ -284,8 +286,8 @@ line-height: 1.5;
 	
 	header .navbar {
 		position: absolute;
-		top: 100%; left: 0%; right: 0%;
-		background-image:linear-gradient(rgb(211,211,211),transparent);
+		top: 103%; left: 0%; right: 0%;
+		background-image:linear-gradient(#f2f3f4,#dcdcdc);
 		clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
 	}
 	
