@@ -168,7 +168,7 @@ ul li.active a{
 	header .navbar {
 		position: absolute;
 		top: 100%; left: 0%; right: 0%;
-		background-image:linear-gradient(rgb(211,211,211),transparent);
+		background-image:linear-gradient(#f2f3f4,#dcdcdc);
 		clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
 	}
 	
@@ -313,8 +313,8 @@ textarea.input {
   left: 15px;
   transform: translateY(-50%);
   padding: 0 0.4rem;
-  color: #da9100;
-  font-size: 1.2rem;
+  color: #000;
+  font-size: 0.9rem;
   font-weight: 400;
   pointer-events: none;
   z-index: 1000;
@@ -323,7 +323,7 @@ textarea.input {
 
 .input-container.textarea label {
   top: 1rem;
-  transform: translateY(0);
+  transform: translateY(-50);
 }
 
 .btn {
