@@ -284,6 +284,11 @@ line-height: 1.5;
 		display: block;
 	}
 	
+	header {
+		background: transparent;
+backdrop-filter: blur(20px);
+	}
+	
 	header .navbar {
 		position: absolute;
 		top: 103%; left: 0%; right: 0%;
