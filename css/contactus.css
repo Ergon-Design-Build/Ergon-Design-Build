@@ -220,6 +220,8 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
+ 
+  
 }
 
 .form {
@@ -558,6 +560,7 @@ textarea.input {
 
 @media (max-width: 480px) {
   .container {
+	 position: fixed;
     padding: 1.5rem;
   }
 

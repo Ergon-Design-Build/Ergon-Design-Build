@@ -308,15 +308,15 @@ img{
 }
 
 .content h2{
-	font-size: 25px;
+	font-size: 30px;
 	text-decoration: underline;
 	color:#fff;
 	margin-bottom: 10px;
 }
 	
 .content p{
-	font-size: 20px;
-	font-weight: bold;
+	font-size: 15px;
+	font-weight: none;
 	color : #fff;
 }
 
