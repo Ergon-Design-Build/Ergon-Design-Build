@@ -30,22 +30,44 @@ left:0;
 right:0;
 background: transparent;
 backdrop-filter: blur(20px);
-padding: .9rem 9%; 
+padding: .6rem 6%; 
 display: flex; 
 align-items: center;
 justify-content: space-between;
 z-index: 1000;
-box-shadow: 0.1rem .5rem rgba(0,0,0,.1);
-}	
-
-header .logo{
-font-size: 3rem;
-color: #333;
-font-weight: bolder;
+box-shadow: 0.05rem .3rem rgba(0,0,0,.08);
+min-height: 64px;
 }
 
-header .logo span{
-color:var(--khaki);
+header .logo{
+font-size: 2.2rem;
+color: #333;
+font-weight: bolder;
+order: 3;
+margin-left: auto;
+display: inline-block;
+}
+
+/* mobile-specific logo - hidden by default on desktop */
+.logoMobile{
+    display: none;
+}
+
+header .logo img{
+display: block;
+height: auto;
+width: auto;
+max-height: 52px;
+max-width: 160px;
+}
+
+/* size for mobile logo image */
+.logoMobile img{
+    display: block;
+    height: auto;
+    width: auto;
+    max-height: 44px;
+    max-width: 110px;
 }
 
 header .navbar a{
@@ -59,11 +81,25 @@ header .navbar a:hover{
 color:var(--khaki);
 }
 
+        /* Project address used on individual project pages (positioned below centered title) */
+        .project-address{
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: calc(8px + 2.6rem + 0.4rem);
+            color:#666;
+            font-size:14px;
+            margin:0;
+            pointer-events: none;
+            white-space:nowrap;
+        }
+
 .icons a{
 font-size: 1.5rem;
 color: #333;
 margin-left: 1.5rem;
 }
+
 
 .icons a:hover{
 color:var(--khaki);
@@ -74,13 +110,41 @@ header #toggler{
 }
 
 header .fa-bars{
-	font-size: 3rem;
-	color: #333;
-	border-radius: .5rem;
-	padding: .5rem 1.5rem;
-	cursor: pointer;
-	border: .1rem solid rgba(0,0,0,.3);
-	display: none;
+    font-size: 2.6rem;
+    color: #333;
+    border-radius: .5rem;
+    padding: .4rem 1rem;
+    cursor: pointer;
+    border: .1rem solid rgba(0,0,0,.2);
+    display: none;
+}
+
+/* Back button on left */
+.back-btn{
+    font-size: 2.4rem;
+    color: #333;
+    text-decoration: none;
+    background: transparent;
+    padding: .4rem .7rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1100;
+}
+
+.back-btn:hover{ color: var(--khaki); }
+
+/* Centered page title */
+.header-title{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 8px;
+    margin: 0;
+    font-size: 2.6rem;
+    color: #333;
+    font-weight: 600;
+    pointer-events: none;
 }
 
 .navbar{
@@ -137,7 +201,7 @@ ul li.active a{
 	padding-top: 2.5rem;
 	font-size: 1rem;
 	color : #333;
-	border-top: .1rem solid rgba(0,0,0 ,. 1);
+	border-top: .1rem solid rgba(0,0,0 ,.1);
 }
 
 .contact-info .credit a{
@@ -158,9 +222,24 @@ ul li.active a{
 	header{
 		padding: 2rem;
 	}
+
+            .gallery{
+	margin:70px auto;
+    min-height: 10vh;
+    background:#eee;
+    padding-bottom: 50px;
+}
+	.gallery .image-container .img {
+    border-radius: 10px;
+    height: 250px;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0 3px 5px rgba(0,0,0,.3);
+}
 }
 
 @media (max-width:768px) {
+
 	header .fa-bars {
 		display: block;
 	}
@@ -176,6 +255,15 @@ backdrop-filter: blur(20px);
 		background-image:linear-gradient(rgb(211,211,211),transparent);
 		clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
 	}
+
+    /* reduce header elements on small screens */
+    .back-btn{ font-size:2.2rem; padding:.35rem .6rem; }
+    .header-title{ font-size:2.2rem; }
+    header{ padding:.8rem 4%; }
+
+    /* On small screens: hide desktop logo, show mobile logo */
+    header .logo{ display: none; }
+    header .logoMobile{ display: inline-block; order: 3; margin-left: auto; }
 	
 	header #toggler:checked ~ .navbar {
 		clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
@@ -207,10 +295,11 @@ backdrop-filter: blur(20px);
 }
 
 .gallery{
-	margin:115px auto;
+	margin:65px auto;
     min-height: 100vh;
     background:#eee;
-    padding-bottom: 100px;
+    padding-top: 20px;
+    padding-bottom: 50px;
 }
 
 .gallery .controls{
@@ -249,9 +338,8 @@ backdrop-filter: blur(20px);
 
 .gallery .image-container .image{
     height:250px;
-    width: 350px;
+    width: 210px;
     overflow: hidden;
-    border:15px solid #fff;
     box-shadow: 0 3px 5px rgba(0,0,0,.3);
     margin: 20px;
 }
@@ -275,3 +363,41 @@ backdrop-filter: blur(20px);
 .gallery .image-container .image:hover video{
     transform: scale(1.4);
 }
+
+@media (max-width:768px){
+      .gallery .image-container .image{
+    height:250px;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 5px rgba(0,0,0,.3);
+    margin: 20px;
+}
+}
+
+    /* Custom scrollbar (WebKit + Firefox) */
+    ::-webkit-scrollbar{
+      width:12px;
+      height:12px;
+    }
+
+    ::-webkit-scrollbar-track{
+      background: #fafafa; /* services section bg */
+      border-radius:12px;
+    }
+
+    ::-webkit-scrollbar-thumb{
+      background: #c39c5d; /* accent color */
+      border-radius:12px;
+      border:3px solid #fafafa; /* creates padding effect */
+    }
+
+    ::-webkit-scrollbar-thumb:hover{
+      background:#b18344;
+    }
+
+    /* Firefox */
+    *{
+      scrollbar-width: thin;
+      scrollbar-color: #c39c5d #fafafa;
+    }
