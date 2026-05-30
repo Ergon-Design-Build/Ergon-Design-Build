@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="icon" href="images/logbg.png"> 
+	
+	<title> Ergon Design & Build - The Residence at Commonwealth</title>
+	
+	<!-- font awesome cdn link -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+	
+	 <!-- magnific-popup css cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+	
+	<!-- font awesome cdn link -->
+    <link rel="stylesheet" href="css/gallary.css?v=1.0">
+	 
+	
+</head>
+<body>
+
+<!-- Header section starts -->
+<header>
+
+    <a href="javascript:history.back()" class="back-btn" title="Back"><i class="fas fa-arrow-left"></i></a>
+
+    <h1 class="header-title">The Residence at Commonwealth</h1>
+    <div class="project-address">Quezon City</div>
+
+    <a href="index.html" class="logo"><img src="images/log2.png" alt="ergon"></a>
+
+    <a href="index.html" class="logoMobile"><img src="images/logbg.png" alt="ergon mobile"></a>
+
+</header>
+<!-- Header section ends -->
+
+
+<div class="gallery">
+
+    <div class="image-container">
+
+        <!-- all images  -->
+        <a href="COMMONWEALTH/img1.jpg" class="image ice-cream">
+            <img src="COMMONWEALTH/img1.jpg" alt="">
+        </a>
+        <a href="COMMONWEALTH/img2.jpg" class="image ice-cream">
+            <img src="COMMONWEALTH/img2.jpg" alt="">
+        </a>
+		<a href="COMMONWEALTH/img3.jpg" class="image ice-cream">
+            <img src="COMMONWEALTH/img3.jpg" alt="">
+        </a>
+		<a href="COMMONWEALTH/img4.jpg" class="image ice-cream">
+            <img src="COMMONWEALTH/img4.jpg" alt="">
+        </a>
+		<a href="COMMONWEALTH/img5.jpg" class="image ice-cream">
+            <img src="COMMONWEALTH/img5.jpg" alt="">
+        </a>
+		<a href="COMMONWEALTH/img6.jpg" class="image ice-cream">
+            <img src="COMMONWEALTH/img6.jpg" alt="">
+        </a>
+		<a href="COMMONWEALTH/img7.jpg" class="image ice-cream">
+            <img src="COMMONWEALTH/img7.jpg" alt="">
+        </a>
+		<a href="COMMONWEALTH/img8.jpg" class="image ice-cream">
+            <img src="COMMONWEALTH/img8.jpg" alt="">
+        </a>
+		<a href="COMMONWEALTH/img9.jpg" class="image ice-cream">
+            <img src="COMMONWEALTH/img9.jpg" alt="">
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- jquery cdn link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- magnific popup js cdn link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+<script>
+
+$(document).ready(function(){
+
+    $('.buttons').click(function(){
+
+        $(this).addClass('active').siblings().removeClass('active');
+
+        var filter = $(this).attr('data-filter')
+
+        if(filter == 'all'){
+            $('.image').show(400);
+        }else{
+            $('.image').not('.'+filter).hide(200);
+            $('.image').filter('.'+filter).show(400);
+        }
+
+    });
+
+    $('.gallery').magnificPopup({
+
+        delegate:'a',
+        type:'image',
+        gallery:{
+            enabled:true
+        }
+
+    });
+
+});
+
+</script>
+    
+</body>
+</html>
